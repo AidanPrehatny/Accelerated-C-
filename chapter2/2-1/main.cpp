@@ -35,7 +35,7 @@ int main() {
         string::size_type c = 0;
  
         // invariant: we have written c characters so far in the current row
-        while ( c != cols)
+        while ( c != cols )
         {
             // is it time to write the greeting?
             if ( ( r == pad ) && ( c == pad + 1 ) )
