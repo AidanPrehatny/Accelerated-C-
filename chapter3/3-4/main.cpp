@@ -16,9 +16,6 @@ int main()
         words.push_back(word);
     }
  
-    typedef vector<double>::size_type vec_sz;
-    vec_sz sizeOwords = words.size();
- 
     string shortestWord;
     string longestWord;
 
