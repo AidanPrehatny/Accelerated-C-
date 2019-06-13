@@ -41,4 +41,5 @@ int main()
             wordCount = 1;
         }
     }
+    return 0;
 }
