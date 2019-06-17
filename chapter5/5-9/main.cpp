@@ -24,6 +24,7 @@ void processCharacters(
     }
 }
 
+
 int main() {
 
     std::list<std::string> words;
@@ -35,7 +36,7 @@ int main() {
 
     std::list<std::string> uppercases;
 
-    processCharacters(words, [](const char c) { return std::islower(c) == 0; }, uppercases);
+    processCharacters(words, [&](const char c) { return std::islower(c) == 0; }, uppercases);
     for (auto i : uppercases) {
         std::cout << i << " upper case " << "\n";
     }
