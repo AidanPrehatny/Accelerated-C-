@@ -2,6 +2,7 @@
 #include <vector>
 #include <cctype>
 #include <algorithm>
+#include <iostream>
 
 using std::vector;
 using std::string;
@@ -26,7 +27,9 @@ vector<string> split(const string str) {
         iter j = find_if(i ,str.end(), space);
 
         if (i != str.end())
+            std::cout << " i: " << *i << " j: " << *j << "done" << "\n";
             ret.push_back(string(i, j));
+            std::cout << string(i, j) << "string constructor" << "\n";
         
         i = j;
     }
