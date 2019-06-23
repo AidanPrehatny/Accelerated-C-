@@ -38,6 +38,28 @@ CopyTo copyMine(It first, It const last, CopyTo copyTo) {
     return copyTo;
 }
 
+template <class InputIterator, class OutputIterator, class Type>
+OutputIterator my_remove_copy(InputIterator b, InputIterator e,
+			      OutputIterator d, const Type& t) {
+  for ( ;b != e; ++b) if (*b != t) *d++ = *b;
+  return d;
+}
+
+template <class InputIterator, class OutputIterator, class Predicate>
+OutputIterator my_remove_copy_if(InputIterator b, InputIterator e,
+				 OutputIterator d, Predicate p) {
+  for ( ;b != e; ++b) if (!p(*b)) *d++ = *b;
+  return d;
+}
+
+template <class ForwardIterator, class Predicate>
+ForwardIterator my_partition(ForwardIterator b, ForwardIterator e,
+			     Predicate p) {
+  ForwardIterator first_fail = b;
+  for ( ;b != e; ++b) if (p(*b)) swap(*first_fail++, *b);
+  return first_fail;
+}
+
 int main() {
 
     vector<string> words;
